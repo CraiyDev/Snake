@@ -1,15 +1,19 @@
 $(function() {
-    var snake = new Snake($('#gameview')[0].getContext('2d'), 20);
+    var view = $('#game-view');
+    view.attr("width", view.innerWidth());
+    view.attr("height", view.innerHeight());
+
+    var snake = new Snake(view[0].getContext('2d'), 20);
     snake.startHandler = () => {
-        $(".gamecover").css("visibility", "hidden");
+        $(".game-ui").css("visibility", "hidden");
     }
     snake.stopHandler = () => {
-        $(".gamemenu > h1").text("GAMEOVER");
-        $(".gamemenu > span").text("Score: " + snake.score);
-        $(".gamemenu > button").text("Retry");
-        $(".gamecover").css("background-color", "#050a12A0")
-        $(".gamecover").css("visibility", "visible");
+        $(".game-menu > h1").text("GAMEOVER");
+        $(".game-menu > span").text("Score: " + snake.score);
+        $(".game-menu > button").text("Retry");
+        $(".game-ui").css("background-color", "#050a12A0")
+        $(".game-ui").css("visibility", "visible");
     }
     $(document).on("keydown", (e) => snake.keyInput(e));
-    $(".gamemenu > button").on("click", snake.start);
+    $(".game-menu > button").on("click", snake.start);
 });

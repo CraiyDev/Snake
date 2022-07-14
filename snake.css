@@ -2,17 +2,19 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#gameview {
+#game-view {
     display: block;
     background-color: white;
     margin: auto;
+    width: 500px;
+    height: 500px;
 }
 
-.gamecontainer {
+.game-container > div {
     position: relative;
 }
 
-.gamecover {
+.game-ui {
     position: absolute;
     display: flex;
     align-items: center;
@@ -23,18 +25,18 @@ body {
     background-color: #050a12;
 }
 
-.gamemenu {
+.game-menu {
     margin: auto;
 }
 
-.gamemenu > h1 {
+.game-menu > h1 {
     margin: auto;
     color: white;
     text-align: center;
     border-bottom: 1px solid white;
 }
 
-.gamemenu > span {
+.game-menu > span {
     display: block;
     color: white;
     margin: auto;
@@ -42,7 +44,7 @@ body {
     width: 100%;
 }
 
-.gamemenu > button {
+.game-menu > button {
     width: 100%;
     height: 40px;
     color: white;
@@ -52,14 +54,14 @@ body {
     cursor: pointer;
 }
 
-.gamemenu > button:hover {
+.game-menu > button:hover {
     color: black;
     background-color: white;
 }
 
 
 
-.gameborder {
+.game-container {
     display: inline-block;
     border: 2px solid black;
 }

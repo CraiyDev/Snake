@@ -31,7 +31,6 @@ function Snake(ctx, cells) {
     }
 
     this.collectFood = () => {
-        console.log("abc");
         this.snake.push(this.snake[this.snake.length - 1]);
         this.score++;
         this.generateFood();
@@ -60,11 +59,13 @@ function Snake(ctx, cells) {
 
         if(next[0] >= this.cells || next[1] >= this.cells || next[0] < 0 || next[1] < 0) {
             this.gameover();
+            return;
         }
 
         this.snake.forEach((item) => {
             if(next[0] == item[0] && next[1] == item[1]) {
                 this.gameover();
+                return;
             }
         });
 
